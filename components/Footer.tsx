@@ -1,0 +1,2 @@
+import { footer } from "@/content/site";
+export function Footer(){const rows=[footer.representative,footer.businessNumber,footer.address,footer.phone].filter(Boolean);return <footer><div className="shell footer-row"><div className="wordmark footer-wordmark"><span>동행</span><small>COMPANY</small></div><div><strong>{footer.company}</strong>{rows.length?rows.map(x=><span key={x}>{x}</span>):<span>회사 정보는 최종 확인 후 입력합니다.</span>}</div></div></footer>}

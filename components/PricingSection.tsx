@@ -1,0 +1,3 @@
+import { pricing, site } from "@/content/site";
+import { Reveal } from "./Reveal";
+export function PricingSection(){return <section className="section pricing-section" id="pricing"><div className="shell"><Reveal className="pricing-card"><div className="price-main"><p className="eyebrow">{pricing.name}</p><div className="price-row"><strong>{pricing.price}</strong><span>{pricing.vat}</span></div><div className="contract"><b>{pricing.contract}</b><span>{pricing.renewal}</span></div><a className="button" href={site.consultationHref}>우리 매장 상담하기 <span>→</span></a></div><div className="price-included"><small>INCLUDED</small><ul>{pricing.included.map(x=><li key={x}><span>✓</span>{x}</li>)}</ul></div></Reveal></div></section>}

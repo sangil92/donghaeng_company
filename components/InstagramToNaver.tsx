@@ -1,0 +1,3 @@
+import { Reveal } from "./Reveal";
+const steps=["Reel 노출","여기 어디지?","매장명 검색","Place 상세","사진 · 메뉴 · 리뷰","길찾기","Visit"];
+export function InstagramToNaver(){return <section className="section bridge-section"><div className="shell"><p className="eyebrow">INSTAGRAM → NAVER → STORE</p><h2>관심이 생긴 순간부터<br/>방문을 결정하는 순간까지.</h2><p className="section-copy">인스타그램에서 만든 관심을 네이버에서 놓치지 않습니다.</p><div className="journey">{steps.map((s,i)=><Reveal key={s} delay={i*55} className="journey-step"><span>{String(i+1).padStart(2,"0")}</span><strong>{s}</strong>{i<steps.length-1?<b aria-hidden="true">→</b>:null}</Reveal>)}</div></div></section>}
