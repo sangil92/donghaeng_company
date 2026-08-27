@@ -287,6 +287,9 @@
 .ring-2 .ring-label{right:-26px;top:50%;transform:translateY(-50%)}
 .ring-3 .ring-label{left:8%;bottom:11%;transform:translate(-8%,50%)}
 
+.bridge-section .journey-step span{font-size:11px}
+.bridge-section .journey-step strong{font-size:16px}
+
 .viral-core{
   position:absolute;
   left:50%;
@@ -472,6 +475,8 @@
 }
 
 @media (max-width:560px){
+  html,
+  body{overflow-x:hidden}
   .creator-bubble{width:39px;height:39px;opacity:.86}
   .creator-3{left:1%;bottom:29%}
   .creator-4{right:1%;bottom:10%}
@@ -482,9 +487,10 @@
   .proof-section::before{width:430px;height:430px;top:-260px}
   .viral-target{height:430px;margin-top:12px}
   .viral-target::before{width:390px;height:390px}
-  .viral-ring.ring-1,.orbit-signal-1{width:150px;height:150px}
-  .viral-ring.ring-2,.orbit-signal-2{width:255px;height:255px}
-  .viral-ring.ring-3,.orbit-signal-3{width:365px;height:365px}
+  .viral-target{width:100%;max-width:100%;overflow:visible}
+  .viral-ring.ring-1,.orbit-signal-1{width:min(150px,43vw);height:min(150px,43vw)}
+  .viral-ring.ring-2,.orbit-signal-2{width:min(255px,72vw);height:min(255px,72vw)}
+  .viral-ring.ring-3,.orbit-signal-3{width:min(365px,calc(100vw - 28px));height:min(365px,calc(100vw - 28px))}
   .viral-core{width:96px;height:96px;box-shadow:0 0 0 9px rgba(255,90,0,.1),0 16px 36px rgba(255,90,0,.18)}
   .viral-core small{font-size:6px}
   .viral-core strong{font-size:13px}
@@ -495,12 +501,16 @@
   .ring-3 .ring-label{left:5%;bottom:8%}
   .viral-node{font-size:6px;min-height:27px;padding:6px 7px;gap:5px;letter-spacing:.035em}
   .viral-node i{width:5px;height:5px;flex-basis:5px;box-shadow:0 0 0 3px rgba(255,90,0,.08)}
-  .node-owned{top:31%}
+  .node-owned{top:6%}
   .node-creator-a{right:0;top:22%}
-  .node-creator-b{right:-1%;bottom:27%}
+  .node-creator-b{right:0;bottom:27%}
   .node-community{left:0;bottom:17%}
   .node-audience{left:-1%;top:25%}
   .viral-wave{width:96px;height:96px}
+  .bridge-section .journey{gap:12px;margin-top:36px}
+  .bridge-section .journey-step{min-height:82px;padding:16px 18px;display:flex;align-items:center;gap:14px}
+  .bridge-section .journey-step span{min-width:24px}
+  .bridge-section .journey-step strong{font-size:17px;line-height:1.35;margin-top:0}
 }
 
 /* Desktop service cards: equal visual weight and consistent content rhythm. */
