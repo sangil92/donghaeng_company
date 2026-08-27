@@ -73,6 +73,11 @@
   animation:phoneFloat 6s ease-in-out infinite;
 }
 
+.phone-account-image{
+  object-fit:cover;
+  object-position:top center;
+}
+
 @media (hover:hover){
   .hero-visual:hover .phone{
     transform:translateY(-7px) rotate(-1deg) scale(1.015);
