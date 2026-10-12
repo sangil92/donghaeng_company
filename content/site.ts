@@ -61,19 +61,19 @@ export const why = [
 
 export const pricing = {
   name: "ALL-IN-ONE LOCAL MARKETING",
-  price: "월 55만원",
+  price: "월 33만원",
   vat: "VAT 포함",
-  contract: "최소 3개월",
-  renewal: "이후 1개월 단위 연장",
+  contract: "27년 얼리버드 한정",
+  renewal: "업체 마감 시 조기 종료",
   included: [
     "네이버 플레이스 운영 지원",
     "검색광고 / 파워링크 운영 지원",
     "체험단 운영 지원",
-    "인스타그램 운영 지원",
     "리뷰 운영 지원",
     "디자인 제작 지원",
     "당근비즈니스 운영 지원",
-    "카카오맵 / 구글 세팅 지원",
+    "카카오맵 세팅 지원",
+    "구글 비즈니스 프로필 세팅 지원",
   ],
 } as const;
 

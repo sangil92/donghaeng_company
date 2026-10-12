@@ -13,10 +13,13 @@ test('approved brand flow and hero copy are implemented', () => {
 
 test('approved pricing contract is preserved', () => {
   const content=read('content/site.ts');
-  assert.match(content,/월 55만원/);
+  assert.match(content,/월 33만원/);
   assert.match(content,/VAT 포함/);
-  assert.match(content,/최소 3개월/);
-  assert.match(content,/이후 1개월 단위 연장/);
+  assert.match(content,/27년 얼리버드 한정/);
+  assert.match(content,/업체 마감 시 조기 종료/);
+  assert.doesNotMatch(content,/인스타그램 운영 지원/);
+  assert.match(content,/카카오맵 세팅 지원/);
+  assert.match(content,/구글 비즈니스 프로필 세팅 지원/);
 });
 
 test('page includes the complete persuasion sequence', () => {
