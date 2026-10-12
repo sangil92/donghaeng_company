@@ -3,9 +3,9 @@
 import { useRef, type MouseEvent as ReactMouseEvent, type ReactNode } from "react";
 
 const baseCards = [
-  { x: 0, y: 0, rotation: -10 },
   { x: 0, y: 0, rotation: 0 },
-  { x: 0, y: 0, rotation: 9 },
+  { x: 0, y: 0, rotation: 0 },
+  { x: 0, y: 0, rotation: 0 },
 ] as const;
 
 export function InteractiveReelStack({ children }: { children: ReactNode }) {
@@ -16,9 +16,9 @@ export function InteractiveReelStack({ children }: { children: ReactNode }) {
     if (!stack) return;
 
     const motion = [
-      { x: x * 20, y: y * 13, rotation: baseCards[0].rotation + x * 3 },
-      { x: x * 34, y: y * 22, rotation: baseCards[1].rotation + x * 2 },
-      { x: x * 20, y: y * 13, rotation: baseCards[2].rotation - x * 3 },
+      { x: x * 10, y: y * 8, rotation: baseCards[0].rotation + x * 1.2 },
+      { x: x * 16, y: y * 12, rotation: baseCards[1].rotation + x * 1.6 },
+      { x: x * 10, y: y * 8, rotation: baseCards[2].rotation - x * 1.2 },
     ];
 
     motion.forEach((card, index) => {

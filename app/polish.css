@@ -258,9 +258,19 @@
 .reel-stack{
   isolation:isolate;
   cursor:grab;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  align-items:center;
+  height:420px;
 }
 
 .mini-reel{
+  position:relative;
+  inset:auto;
+  width:auto;
+  height:380px;
+  aspect-ratio:auto;
   display:flex;
   flex-direction:column;
   justify-content:space-between;
@@ -269,6 +279,15 @@
   letter-spacing:-.02em;
   transition:transform .55s cubic-bezier(.2,.8,.2,1),box-shadow .55s ease;
   will-change:transform;
+}
+
+.reel-stack .r1,
+.reel-stack .r2,
+.reel-stack .r3{
+  top:auto;
+  left:auto;
+  z-index:1;
+  transform:none;
 }
 
 .reel-stack[data-interacting="true"]{cursor:grabbing}
@@ -868,6 +887,18 @@
   .services-section .service-3{
     grid-column:auto;
     min-height:250px;
+  }
+}
+
+@media (max-width:640px){
+  .reel-stack{
+    grid-template-columns:1fr;
+    height:auto;
+    gap:14px;
+  }
+
+  .reel-stack .mini-reel{
+    height:300px;
   }
 }
 
