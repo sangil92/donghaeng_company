@@ -5,7 +5,7 @@ export function ReelPhone() {
     <div className="phone" aria-label="전주어디갈래 인스타그램 실제 계정 화면">
       <Image
         className="phone-account-image"
-        src="/instagram-jeonju-wwtg.png"
+        src="/instagram-jeonju-wwtg.webp"
         alt="전주어디갈래 인스타그램 계정 프로필과 릴스 콘텐츠"
         fill
         priority
