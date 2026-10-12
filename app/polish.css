@@ -159,6 +159,102 @@
   box-shadow:0 10px 28px rgba(3,17,39,.08);
 }
 
+.search-card{
+  overflow:hidden;
+  padding:28px 36px 22px;
+  border-radius:28px;
+}
+
+.search-card .search-bar{
+  height:74px;
+  padding:0 22px;
+  gap:17px;
+  border-radius:18px;
+  background:#fff;
+  box-shadow:inset 0 0 0 1px rgba(228,231,236,.32);
+}
+
+.search-n-mark{
+  color:#03c75a;
+  font-family:Arial,sans-serif;
+  font-size:36px;
+  font-weight:950;
+  line-height:1;
+}
+
+.search-card .search-bar b{
+  color:#101828;
+  font-size:22px;
+  font-weight:850;
+}
+
+.search-suggestions{
+  margin-top:12px;
+}
+
+.search-suggestion{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  min-height:54px;
+  border-bottom:1px solid #f0f2f4;
+  color:#344054;
+  font-size:18px;
+  line-height:1.4;
+}
+
+.search-suggestion strong{
+  color:#101828;
+  font-weight:900;
+}
+
+.suggestion-icon{
+  position:relative;
+  display:inline-flex;
+  flex:0 0 30px;
+  align-items:center;
+  justify-content:center;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  background:#f2f4f7;
+  color:#98a2b3;
+}
+
+.suggestion-icon::before{
+  content:"";
+  width:10px;
+  height:10px;
+  border:1.5px solid currentColor;
+  border-radius:50%;
+}
+
+.suggestion-icon-clock::after{
+  content:"";
+  position:absolute;
+  width:1.5px;
+  height:5px;
+  background:currentColor;
+  transform:translateY(-2px) rotate(0deg);
+  transform-origin:bottom center;
+}
+
+.suggestion-icon-clock::before{box-shadow:3px 3px 0 -2px currentColor}
+
+.suggestion-icon-search::after{
+  content:"";
+  position:absolute;
+  width:5px;
+  height:1.5px;
+  background:currentColor;
+  transform:translate(5px,5px) rotate(45deg);
+  transform-origin:left center;
+}
+
+.search-card > p{
+  margin:22px 4px 2px;
+}
+
 .proof-section{
   position:relative;
   overflow:hidden;
@@ -484,6 +580,14 @@
   .search-cue small{font-size:8px}
   .search-cue strong{font-size:13px}
   .search-cue span{font-size:9px}
+  .search-card{padding:18px 16px 16px;border-radius:22px}
+  .search-card .search-bar{height:58px;padding:0 16px;gap:12px;border-radius:15px}
+  .search-n-mark{font-size:30px}
+  .search-card .search-bar b{font-size:19px}
+  .search-suggestions{margin-top:8px}
+  .search-suggestion{gap:12px;min-height:46px;font-size:15px}
+  .suggestion-icon{flex-basis:26px;width:26px;height:26px}
+  .search-card > p{margin:18px 2px 0;font-size:16px}
   .proof-section::before{width:430px;height:430px;top:-260px}
   .viral-target{height:430px;margin-top:12px}
   .viral-target::before{width:390px;height:390px}
