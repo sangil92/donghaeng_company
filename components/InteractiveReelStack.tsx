@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, type PointerEvent as ReactPointerEvent, type ReactNode } from "react";
+import { useRef, type MouseEvent as ReactMouseEvent, type ReactNode } from "react";
 
 const baseCards = [
   { x: 0, y: 0, rotation: -10 },
@@ -16,23 +16,20 @@ export function InteractiveReelStack({ children }: { children: ReactNode }) {
     if (!stack) return;
 
     const motion = [
-      { x: x * 8, y: y * 5, rotation: baseCards[0].rotation + x * 1.5 },
-      { x: x * 14, y: y * 9, rotation: baseCards[1].rotation + x * 1.1 },
-      { x: x * 8, y: y * 5, rotation: baseCards[2].rotation - x * 1.5 },
+      { x: x * 20, y: y * 13, rotation: baseCards[0].rotation + x * 3 },
+      { x: x * 34, y: y * 22, rotation: baseCards[1].rotation + x * 2 },
+      { x: x * 20, y: y * 13, rotation: baseCards[2].rotation - x * 3 },
     ];
 
     motion.forEach((card, index) => {
-      stack.style.setProperty(`--card-${index + 1}-x`, `${card.x.toFixed(2)}px`);
-      stack.style.setProperty(`--card-${index + 1}-y`, `${card.y.toFixed(2)}px`);
-      stack.style.setProperty(`--card-${index + 1}-rotation`, `${card.rotation.toFixed(2)}deg`);
+      const element = stack.querySelector<HTMLElement>(`.r${index + 1}`);
+      element?.style.setProperty("transform", `translate3d(${card.x.toFixed(2)}px, ${card.y.toFixed(2)}px, 0) rotate(${card.rotation.toFixed(2)}deg)`);
     });
 
     stack.dataset.interacting = active ? "true" : "false";
   };
 
-  const handlePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
-    if (event.pointerType === "touch") return;
-
+  const handleMouseMove = (event: ReactMouseEvent<HTMLDivElement>) => {
     const stack = stackRef.current;
     if (!stack) return;
 
@@ -48,9 +45,8 @@ export function InteractiveReelStack({ children }: { children: ReactNode }) {
     <div
       ref={stackRef}
       className="reel-stack"
-      onPointerMove={handlePointerMove}
-      onPointerLeave={resetPointer}
-      onPointerCancel={resetPointer}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={resetPointer}
     >
       {children}
     </div>

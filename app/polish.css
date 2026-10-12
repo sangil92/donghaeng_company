@@ -273,9 +273,6 @@
 
 .reel-stack[data-interacting="true"]{cursor:grabbing}
 .reel-stack[data-interacting="true"] .mini-reel{transition-duration:.12s}
-.reel-stack .r1{transform:translate3d(var(--card-1-x,0px),var(--card-1-y,0px),0) rotate(var(--card-1-rotation,-10deg))}
-.reel-stack .r2{transform:translate3d(var(--card-2-x,0px),var(--card-2-y,0px),0) rotate(var(--card-2-rotation,0deg))}
-.reel-stack .r3{transform:translate3d(var(--card-3-x,0px),var(--card-3-y,0px),0) rotate(var(--card-3-rotation,9deg))}
 
 .reel-stack[data-interacting="true"] .r1{box-shadow:0 26px 55px rgba(3,17,39,.18)}
 .reel-stack[data-interacting="true"] .r2{box-shadow:0 34px 70px rgba(3,17,39,.3)}
