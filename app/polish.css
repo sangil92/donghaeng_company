@@ -500,15 +500,28 @@
 
 .proof-section .shell{position:relative;z-index:1}
 
+.proof-section .big-stat{
+  line-height:1;
+  margin-bottom:26px;
+}
+
 .big-stat .animated-stat{
   display:inline-flex;
   align-items:flex-start;
+  line-height:1;
   color:#fff;
   font-variant-numeric:tabular-nums;
 }
 
 .big-stat .animated-stat>span:first-child{color:#fff}
 .big-stat .animated-stat-suffix{color:var(--orange);margin-left:.03em}
+
+.proof-section .stat-label{
+  margin:0;
+  line-height:1.5;
+  position:relative;
+  z-index:1;
+}
 
 .proof-card{
   position:relative;
