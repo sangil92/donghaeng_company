@@ -127,8 +127,10 @@ test('all consultation CTAs use the approved open Kakao link', () => {
 test('pricing includes the Jeonju-everywhere package benefit', () => {
   const content=read('content/site.ts');
   assert.match(content,/전주어디갈래 인스타 사진·릴스 패키지 항시 30% 할인/);
+  assert.match(content,/전주 지역 활동 타 먹플루언서 협업 문의 무료 진행 \(먹플루언서 협찬비 별도\)/);
   const pricing=read('components/PricingSection.tsx');
   assert.match(pricing,/price-benefit/);
+  assert.match(pricing,/협찬비 별도/);
 });
 
 
