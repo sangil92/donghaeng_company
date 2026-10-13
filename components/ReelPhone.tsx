@@ -11,6 +11,7 @@ export function ReelPhone() {
         priority
         sizes="(max-width: 640px) 230px, 286px"
       />
+      <div className="phone-top-clear" aria-hidden="true" />
     </div>
   );
 }
