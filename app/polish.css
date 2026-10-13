@@ -1114,3 +1114,57 @@
 }
 
 .diagnosis-previous{border:0;background:transparent;color:var(--muted);padding:4px 0;font:inherit;font-size:11px;font-weight:850;white-space:nowrap;cursor:pointer;transition:color .2s ease}.diagnosis-previous:hover,.diagnosis-previous:focus-visible{color:var(--orange);outline:none}
+
+
+/* Keep the brand philosophy inside the trust section so the story closes without a separate full-page detour. */
+.why-philosophy{
+  position:relative;
+  overflow:hidden;
+  margin-top:68px;
+  padding:72px;
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 12% 18%,rgba(255,90,0,.24),transparent 36%),
+    linear-gradient(120deg,rgba(3,17,39,.28),rgba(3,17,39,.96)),
+    repeating-linear-gradient(135deg,transparent 0 20px,rgba(255,255,255,.02) 20px 22px);
+  color:#fff;
+}
+.why-philosophy::after{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  right:-150px;
+  bottom:-220px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 0 0 42px rgba(255,255,255,.025),0 0 0 84px rgba(255,255,255,.018);
+}
+.why-philosophy .eyebrow,
+.why-philosophy h2,
+.why-philosophy p{
+  position:relative;
+  z-index:1;
+}
+.why-philosophy h2{
+  max-width:900px;
+  margin:0;
+  color:#fff;
+  font-size:clamp(38px,4.6vw,64px);
+  line-height:1.15;
+  letter-spacing:-.05em;
+}
+.why-philosophy h2 span{color:var(--orange)}
+.why-philosophy p:last-child{
+  max-width:680px;
+  margin:28px 0 0;
+  color:rgba(255,255,255,.66);
+  font-size:17px;
+  line-height:1.8;
+  font-weight:var(--weight-body);
+}
+@media(max-width:640px){
+  .why-philosophy{margin-top:48px;padding:38px 26px;border-radius:22px}
+  .why-philosophy h2{font-size:36px}
+  .why-philosophy p:last-child{font-size:15px}
+}
