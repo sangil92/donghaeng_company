@@ -115,3 +115,10 @@ test('contact cards include the approved KakaoTalk and Instagram links', () => {
   assert.match(cta,/https:\/\/instagram\.com\/jeonju\.wwtg/);
   assert.match(cta,/contact-link-card/);
 });
+
+
+test('all consultation CTAs use the approved open Kakao link', () => {
+  const content=read('content/site.ts');
+  assert.doesNotMatch(content,/sOBUAbSi/);
+  assert.equal((content.match(/https:\/\/open\.kakao\.com\/o\/sBp30eSi/g) || []).length >= 2,true);
+});
