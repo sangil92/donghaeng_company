@@ -1112,3 +1112,5 @@
   .calculator-fields{grid-template-columns:1fr;padding:26px 22px;gap:16px}.calculator-result{padding:28px 22px}.calculator-result-main strong{font-size:52px}.calculator-result-grid{gap:6px}.calculator-result-grid div{padding:12px 8px}.calculator-result-grid b{font-size:15px}.calculator-result-grid span{font-size:9px}
   .faq-item button{font-size:15px}.faq-item p{margin-right:0}
 }
+
+.diagnosis-previous{border:0;background:transparent;color:var(--muted);padding:4px 0;font:inherit;font-size:11px;font-weight:850;white-space:nowrap;cursor:pointer;transition:color .2s ease}.diagnosis-previous:hover,.diagnosis-previous:focus-visible{color:var(--orange);outline:none}
