@@ -5,10 +5,10 @@ const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf
 
 test('approved brand flow and hero copy are implemented', () => {
   const content = read('content/site.ts');
-  for (const value of ['발견','확산','검색','확신','방문']) assert.match(content,new RegExp(value));
+  for (const value of ['검색','플레이스','사진','리뷰','방문','재방문']) assert.match(content,new RegExp(value));
   assert.match(content,/좋은 매장이/);
-  assert.match(content,/더 많은 사람에게/);
-  assert.match(content,/발견되도록/);
+  assert.match(content,/더 잘 보일 수/);
+  assert.match(content,/있도록/);
 });
 
 test('approved pricing contract is preserved', () => {

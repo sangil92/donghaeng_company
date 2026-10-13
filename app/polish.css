@@ -857,6 +857,21 @@
 
 /* Desktop service cards: equal visual weight and consistent content rhythm. */
 @media (min-width:1025px){
+  .flow-section .flow-grid{
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:12px;
+  }
+
+  .flow-section .flow-card{
+    min-height:270px;
+    padding:24px 18px;
+  }
+
+  .flow-section .flow-card h3{
+    font-size:22px;
+    line-height:1.25;
+  }
+
   .services-section .service-grid{
     grid-template-columns:repeat(4,minmax(0,1fr));
     gap:18px;
