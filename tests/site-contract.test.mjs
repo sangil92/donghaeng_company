@@ -14,6 +14,8 @@ test('approved brand flow and hero copy are implemented', () => {
 test('approved pricing contract is preserved', () => {
   const content=read('content/site.ts');
   assert.match(content,/월 33만원/);
+  assert.match(content,/정상가 월 55만원/);
+  assert.match(content,/얼리버드 할인/);
   assert.match(content,/VAT 포함/);
   assert.match(content,/27년 얼리버드 한정/);
   assert.match(content,/업체 마감 시 조기 종료/);

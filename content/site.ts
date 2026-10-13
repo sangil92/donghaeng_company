@@ -62,6 +62,8 @@ export const why = [
 
 export const pricing = {
   name: "ALL-IN-ONE LOCAL MARKETING",
+  regularPrice: "정상가 월 55만원",
+  discountLabel: "얼리버드 할인",
   price: "월 33만원",
   vat: "VAT 포함",
   contract: "27년 얼리버드 한정",
