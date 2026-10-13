@@ -3,17 +3,15 @@ import { Hero } from "@/components/Hero";
 import { ProblemSection } from "@/components/ProblemSection";
 import { StoreDiagnosis } from "@/components/StoreDiagnosis";
 import { CustomerLadder } from "@/components/CustomerLadder";
-import { ViralNetwork } from "@/components/ViralNetwork";
 import { PivotSection } from "@/components/PivotSection";
 import { DonghaengFlow } from "@/components/DonghaengFlow";
 import { ServicesSection } from "@/components/ServicesSection";
 import { ProofSection } from "@/components/ProofSection";
 import { WhyDonghaeng } from "@/components/WhyDonghaeng";
-import { LocalPhilosophy } from "@/components/LocalPhilosophy";
 import { PricingSection } from "@/components/PricingSection";
-import { StoreCalculator } from "@/components/StoreCalculator";
 import { FAQSection } from "@/components/FAQSection";
 import { FinalCta } from "@/components/FinalCta";
 import { Footer } from "@/components/Footer";
 import { MobileStickyCta } from "@/components/MobileStickyCta";
-export default function Home(){return <><Header/><main><Hero/><ProblemSection/><StoreDiagnosis/><CustomerLadder/><ViralNetwork/><PivotSection/><DonghaengFlow/><StoreCalculator/><ServicesSection/><ProofSection/><WhyDonghaeng/><LocalPhilosophy/><FAQSection/><PricingSection/><FinalCta/></main><Footer/><MobileStickyCta/></>}
+
+export default function Home(){return <><Header/><main><Hero/><ProblemSection/><StoreDiagnosis/><CustomerLadder/><PivotSection/><DonghaengFlow/><ServicesSection/><ProofSection/><WhyDonghaeng/><PricingSection/><FAQSection/><FinalCta/></main><Footer/><MobileStickyCta/></>}
