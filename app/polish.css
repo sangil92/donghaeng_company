@@ -1268,3 +1268,17 @@
   .contact-link-copy strong{font-size:16px}
   .contact-link-copy small{font-size:11px}
 }
+
+
+.price-included li.price-benefit{
+  margin-top:8px;
+  padding:14px 15px;
+  border-radius:14px;
+  background:var(--soft-orange);
+  color:var(--navy);
+  font-weight:850;
+  line-height:1.55;
+}
+.price-included li.price-benefit span{
+  font-weight:950;
+}
