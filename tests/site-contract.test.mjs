@@ -122,3 +122,11 @@ test('all consultation CTAs use the approved open Kakao link', () => {
   assert.doesNotMatch(content,/sOBUAbSi/);
   assert.equal((content.match(/https:\/\/open\.kakao\.com\/o\/sBp30eSi/g) || []).length >= 2,true);
 });
+
+
+test('pricing includes the Jeonju-everywhere package benefit', () => {
+  const content=read('content/site.ts');
+  assert.match(content,/전주어디갈래 인스타 사진·릴스 패키지 항시 30% 할인/);
+  const pricing=read('components/PricingSection.tsx');
+  assert.match(pricing,/price-benefit/);
+});
