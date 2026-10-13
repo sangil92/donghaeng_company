@@ -92,6 +92,6 @@ export const footer = {
   phone: "연락처: 010-7776-0198",
   email: "이메일: donghaeng.marketing@gmail.com",
   consultationHref: "https://open.kakao.com/o/sBp30eSi",
-  instagramHref: "",
+  instagramHref: "https://instagram.com/jeonju.wwtg",
   privacyHref: "/privacy",
 } as const;
