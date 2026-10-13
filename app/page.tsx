@@ -6,7 +6,6 @@ import { CustomerLadder } from "@/components/CustomerLadder";
 import { ViralNetwork } from "@/components/ViralNetwork";
 import { PivotSection } from "@/components/PivotSection";
 import { DonghaengFlow } from "@/components/DonghaengFlow";
-import { InstagramToNaver } from "@/components/InstagramToNaver";
 import { ServicesSection } from "@/components/ServicesSection";
 import { ProofSection } from "@/components/ProofSection";
 import { WhyDonghaeng } from "@/components/WhyDonghaeng";
@@ -17,4 +16,4 @@ import { FAQSection } from "@/components/FAQSection";
 import { FinalCta } from "@/components/FinalCta";
 import { Footer } from "@/components/Footer";
 import { MobileStickyCta } from "@/components/MobileStickyCta";
-export default function Home(){return <><Header/><main><Hero/><ProblemSection/><StoreDiagnosis/><CustomerLadder/><ViralNetwork/><PivotSection/><DonghaengFlow/><InstagramToNaver/><StoreCalculator/><ServicesSection/><ProofSection/><WhyDonghaeng/><LocalPhilosophy/><FAQSection/><PricingSection/><FinalCta/></main><Footer/><MobileStickyCta/></>}
+export default function Home(){return <><Header/><main><Hero/><ProblemSection/><StoreDiagnosis/><CustomerLadder/><ViralNetwork/><PivotSection/><DonghaengFlow/><StoreCalculator/><ServicesSection/><ProofSection/><WhyDonghaeng/><LocalPhilosophy/><FAQSection/><PricingSection/><FinalCta/></main><Footer/><MobileStickyCta/></>}
