@@ -106,3 +106,12 @@ test('desktop services use a uniform four-column grid without featured spans', (
   assert.match(polish,/@media\s*\(min-width:\s*1025px\)[\s\S]*?\.services-section \.service-card[\s\S]*?display:\s*flex[\s\S]*?flex-direction:\s*column/);
   assert.match(polish,/@media\s*\(min-width:\s*1025px\)[\s\S]*?\.services-section \.service-card ul[\s\S]*?margin-top:\s*auto/);
 });
+
+test('free diagnosis uses nine questions with back navigation', () => {
+  const diagnosis=read('components/StoreDiagnosis.tsx');
+  assert.match(diagnosis,/const questions = \[/);
+  assert.equal((diagnosis.match(/\["/g) || []).length >= 9, true);
+  assert.match(diagnosis,/9개 질문/);
+  assert.match(diagnosis,/이전 질문/);
+  assert.match(diagnosis,/goPrevious/);
+});
