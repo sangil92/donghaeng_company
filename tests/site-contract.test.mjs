@@ -130,3 +130,13 @@ test('pricing includes the Jeonju-everywhere package benefit', () => {
   const pricing=read('components/PricingSection.tsx');
   assert.match(pricing,/price-benefit/);
 });
+
+
+test('hero phone mockup links to the approved Instagram account', () => {
+  const content=read('content/site.ts');
+  const reel=read('components/ReelPhone.tsx');
+  assert.match(content,/instagramHref: "https:\/\/instagram\.com\/jeonju\.wwtg"/);
+  assert.match(reel,/href=\{site\.instagramHref\}/);
+  assert.match(reel,/전주어디갈래 인스타그램으로 이동/);
+  assert.match(reel,/phone-link/);
+});
