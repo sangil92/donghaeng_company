@@ -26,10 +26,11 @@ test('approved pricing contract is preserved', () => {
   assert.match(content,/구글 비즈니스 프로필 세팅 지원/);
 });
 
-test('page includes the approved persuasion sequence without the removed review page', () => {
+test('page includes the approved persuasion sequence without removed proof and discovery pages', () => {
   const page=read('app/page.tsx');
-  for(const component of ['Hero','ProblemSection','DiscoverySection','ViralNetwork','PivotSection','DonghaengFlow','InstagramToNaver','ServicesSection','WhyDonghaeng','LocalPhilosophy','PricingSection','FinalCta']) assert.match(page,new RegExp(component));
+  for(const component of ['Hero','ProblemSection','ViralNetwork','PivotSection','DonghaengFlow','InstagramToNaver','ServicesSection','WhyDonghaeng','LocalPhilosophy','PricingSection','FinalCta']) assert.match(page,new RegExp(component));
   assert.doesNotMatch(page,/ProofSection/);
+  assert.doesNotMatch(page,/DiscoverySection/);
 });
 
 test('accessibility-safe motion is present', () => {
