@@ -1,7 +1,7 @@
 export const site = {
   name: "동행컴퍼니",
   englishName: "DONGHAENG COMPANY",
-  consultationHref: "https://open.kakao.com/o/sOBUAbSi",
+  consultationHref: "https://open.kakao.com/o/sBp30eSi",
   instagramFollowersLabel: "100K+",
   instagramFollowersVerified: false,
 } as const;
@@ -90,7 +90,7 @@ export const footer = {
   address: "",
   phone: "연락처: 010-7776-0198",
   email: "이메일: donghaeng.marketing@gmail.com",
-  consultationHref: "https://open.kakao.com/o/sOBUAbSi",
+  consultationHref: "https://open.kakao.com/o/sBp30eSi",
   instagramHref: "",
   privacyHref: "/privacy",
 } as const;
