@@ -84,10 +84,12 @@ export const pricing = {
 
 export const footer = {
   company: "동행컴퍼니",
-  representative: "",
-  businessNumber: "",
+  representative: "대표자: 박상일",
+  businessNumber: "사업자등록번호: 276-05-03462",
   address: "",
-  phone: "",
+  phone: "연락처: 010-7776-0198",
+  email: "이메일: donghaeng.marketing@gmail.com",
+  consultationHref: "https://open.kakao.com/o/sOBUAbSi",
   instagramHref: "",
-  privacyHref: "",
+  privacyHref: "/privacy",
 } as const;
