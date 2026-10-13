@@ -1168,3 +1168,103 @@
   .why-philosophy h2{font-size:36px}
   .why-philosophy p:last-child{font-size:15px}
 }
+
+
+/* Compact contact cards inspired by the supplied reference image. */
+.contact-section{
+  padding:96px 0 88px;
+  background:#f2f4f7;
+}
+.contact-shell{
+  width:min(760px,calc(100% - 48px));
+}
+.contact-heading{
+  margin-bottom:30px;
+}
+.contact-heading h2{
+  margin:0;
+  color:var(--navy);
+  font-size:clamp(40px,4.8vw,64px);
+  line-height:1.1;
+  letter-spacing:-.055em;
+  font-weight:var(--weight-section);
+}
+.contact-heading h2 span{color:var(--orange)}
+.contact-link-list{
+  display:grid;
+  gap:14px;
+}
+.contact-link-card{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  min-height:92px;
+  padding:18px 22px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:22px;
+  background:#172235;
+  color:#fff;
+  box-shadow:0 16px 36px rgba(3,17,39,.14);
+  transition:transform .25s ease,background .25s ease,box-shadow .25s ease;
+}
+.contact-link-card:hover,
+.contact-link-card:focus-visible{
+  background:#20304b;
+  box-shadow:0 20px 42px rgba(3,17,39,.2);
+  transform:translateY(-3px);
+}
+.contact-link-icon{
+  display:grid;
+  flex:0 0 58px;
+  width:58px;
+  height:58px;
+  place-items:center;
+  border-radius:17px;
+}
+.contact-link-icon svg{
+  width:30px;
+  height:30px;
+  fill:none;
+  stroke:#fff;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.kakao-icon{background:#00c853}
+.instagram-icon{background:linear-gradient(145deg,#ffbf4d 0%,#f04480 46%,#8d37c7 100%)}
+.instagram-icon .instagram-dot{fill:#fff;stroke:none}
+.contact-link-copy{
+  display:grid;
+  gap:5px;
+  min-width:0;
+}
+.contact-link-copy strong{
+  color:#fff;
+  font-size:19px;
+  font-weight:850;
+  letter-spacing:-.03em;
+}
+.contact-link-copy small{
+  overflow:hidden;
+  color:rgba(255,255,255,.55);
+  font-size:13px;
+  line-height:1.35;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.contact-link-arrow{
+  margin-left:auto;
+  color:rgba(255,255,255,.46);
+  font-size:34px;
+  font-weight:300;
+  line-height:1;
+}
+@media(max-width:640px){
+  .contact-section{padding:80px 0 72px}
+  .contact-shell{width:min(100% - 28px,760px)}
+  .contact-link-card{min-height:82px;padding:14px 16px;border-radius:18px}
+  .contact-link-icon{flex-basis:50px;width:50px;height:50px;border-radius:15px}
+  .contact-link-icon svg{width:26px;height:26px}
+  .contact-link-copy strong{font-size:16px}
+  .contact-link-copy small{font-size:11px}
+}
