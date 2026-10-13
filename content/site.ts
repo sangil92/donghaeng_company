@@ -7,6 +7,7 @@ export const site = {
 } as const;
 
 export const nav = [
+  { label: "무료 진단", href: "#quiz" },
   { label: "동행의 방식", href: "#flow" },
   { label: "서비스", href: "#services" },
   { label: "동행의 차이", href: "#why" },
