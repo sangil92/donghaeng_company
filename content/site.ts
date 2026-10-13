@@ -66,6 +66,8 @@ export const pricing = {
   vat: "VAT 포함",
   contract: "27년 얼리버드 한정",
   renewal: "업체 마감 시 조기 종료",
+  contractNote: "최초 3개월 계약 후 1개월 단위 연장",
+  referralNote: "지인 업체 소개 시 1개월 대행비용 무료",
   included: [
     "네이버 플레이스 운영 지원",
     "검색광고 / 파워링크 운영 지원",

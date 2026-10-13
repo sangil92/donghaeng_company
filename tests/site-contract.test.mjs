@@ -17,6 +17,8 @@ test('approved pricing contract is preserved', () => {
   assert.match(content,/VAT 포함/);
   assert.match(content,/27년 얼리버드 한정/);
   assert.match(content,/업체 마감 시 조기 종료/);
+  assert.match(content,/최초 3개월 계약 후 1개월 단위 연장/);
+  assert.match(content,/지인 업체 소개 시 1개월 대행비용 무료/);
   assert.doesNotMatch(content,/인스타그램 운영 지원/);
   assert.match(content,/카카오맵 세팅 지원/);
   assert.match(content,/구글 비즈니스 프로필 세팅 지원/);

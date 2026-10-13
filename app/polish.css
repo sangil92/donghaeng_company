@@ -56,6 +56,22 @@
   font-weight:950;
 }
 
+.contract-note,
+.referral-note{
+  margin:0;
+  font-size:12px;
+  line-height:1.6;
+}
+
+.contract-note{
+  color:rgba(255,255,255,.82);
+}
+
+.referral-note{
+  color:#ffc5a5;
+  font-weight:850;
+}
+
 .hero-visual::before{
   content:"";
   position:absolute;
