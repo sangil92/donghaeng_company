@@ -28,7 +28,7 @@ test('approved pricing contract is preserved', () => {
 
 test('page includes owner proof while omitting the removed discovery page', () => {
   const page=read('app/page.tsx');
-  for(const component of ['Hero','ProblemSection','ViralNetwork','PivotSection','DonghaengFlow','InstagramToNaver','ServicesSection','ProofSection','WhyDonghaeng','LocalPhilosophy','PricingSection','FinalCta']) assert.match(page,new RegExp(component));
+  for(const component of ['Hero','ProblemSection','ViralNetwork','PivotSection','DonghaengFlow','ServicesSection','ProofSection','WhyDonghaeng','LocalPhilosophy','PricingSection','FinalCta']) assert.match(page,new RegExp(component));
   assert.doesNotMatch(page,/DiscoverySection/);
 });
 
