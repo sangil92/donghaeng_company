@@ -17,7 +17,7 @@ export function Hero() {
           </h1>
           <Reveal delay={210}>
             <div className="hero-body">{hero.body.map((line) => <p key={line}>{line}</p>)}</div>
-            <a className="button" href={site.consultationHref}>{hero.cta} <span>→</span></a>
+            <a className="button" href={site.consultationHref} target="_blank" rel="noreferrer">{hero.cta} <span>→</span></a>
             <div className="trust-tags">{hero.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
           </Reveal>
         </div>

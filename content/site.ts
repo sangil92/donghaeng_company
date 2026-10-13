@@ -1,7 +1,7 @@
 export const site = {
   name: "동행컴퍼니",
   englishName: "DONGHAENG COMPANY",
-  consultationHref: "#contact",
+  consultationHref: "https://open.kakao.com/o/sOBUAbSi",
   instagramFollowersLabel: "100K+",
   instagramFollowersVerified: false,
 } as const;
