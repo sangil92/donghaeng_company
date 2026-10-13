@@ -26,10 +26,12 @@ test('approved pricing contract is preserved', () => {
   assert.match(content,/구글 비즈니스 프로필 세팅 지원/);
 });
 
-test('page includes owner proof while omitting the removed discovery page', () => {
+test('story arc keeps core sections and removes redundant detours', () => {
   const page=read('app/page.tsx');
-  for(const component of ['Hero','ProblemSection','ViralNetwork','PivotSection','DonghaengFlow','ServicesSection','ProofSection','WhyDonghaeng','LocalPhilosophy','PricingSection','FinalCta']) assert.match(page,new RegExp(component));
-  assert.doesNotMatch(page,/DiscoverySection/);
+  for(const component of ['Hero','ProblemSection','StoreDiagnosis','CustomerLadder','PivotSection','DonghaengFlow','ServicesSection','ProofSection','WhyDonghaeng','PricingSection','FAQSection','FinalCta']) assert.match(page,new RegExp(component));
+  for(const removed of ['DiscoverySection','InstagramToNaver','ViralNetwork','StoreCalculator','LocalPhilosophy']) assert.doesNotMatch(page,new RegExp(removed));
+  const order=['Hero','ProblemSection','StoreDiagnosis','CustomerLadder','PivotSection','DonghaengFlow','ServicesSection','ProofSection','WhyDonghaeng','PricingSection','FAQSection','FinalCta'].map((component)=>page.indexOf(component));
+  assert.equal(order.every((position,index)=>position >= 0 && (index === 0 || position > order[index - 1])),true);
 });
 
 test('accessibility-safe motion is present', () => {
