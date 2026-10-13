@@ -26,10 +26,9 @@ test('approved pricing contract is preserved', () => {
   assert.match(content,/구글 비즈니스 프로필 세팅 지원/);
 });
 
-test('page includes the approved persuasion sequence without removed proof and discovery pages', () => {
+test('page includes owner proof while omitting the removed discovery page', () => {
   const page=read('app/page.tsx');
-  for(const component of ['Hero','ProblemSection','ViralNetwork','PivotSection','DonghaengFlow','InstagramToNaver','ServicesSection','WhyDonghaeng','LocalPhilosophy','PricingSection','FinalCta']) assert.match(page,new RegExp(component));
-  assert.doesNotMatch(page,/ProofSection/);
+  for(const component of ['Hero','ProblemSection','ViralNetwork','PivotSection','DonghaengFlow','InstagramToNaver','ServicesSection','ProofSection','WhyDonghaeng','LocalPhilosophy','PricingSection','FinalCta']) assert.match(page,new RegExp(component));
   assert.doesNotMatch(page,/DiscoverySection/);
 });
 
