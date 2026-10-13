@@ -40,13 +40,13 @@ test('accessibility-safe motion is present', () => {
   assert.match(reveal,/IntersectionObserver/);
 });
 
-test('100k proof uses an intersection-aware animated stat', () => {
+test('owner proof uses real review images and intersection-aware reveal', () => {
   const proof=read('components/ProofSection.tsx');
-  const stat=read('components/AnimatedStat.tsx');
-  assert.match(proof,/AnimatedStat/);
-  assert.match(stat,/IntersectionObserver/);
-  assert.match(stat,/requestAnimationFrame/);
-  assert.match(stat,/prefers-reduced-motion/);
+  assert.match(proof,/REAL OWNER REVIEWS/);
+  assert.match(proof,/review-full-house\.webp/);
+  assert.match(proof,/review-naver-place\.webp/);
+  assert.match(proof,/실제 카카오톡 후기/);
+  assert.match(proof,/Reveal/);
 });
 
 test('hero visual communicates creator spread and search intent', () => {
