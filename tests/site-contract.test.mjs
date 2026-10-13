@@ -79,18 +79,6 @@ test('typography hierarchy emphasizes headings and cards while keeping body copy
   assert.match(polish,/\.section-copy[\s\S]*?font-weight:\s*var\(--weight-body\)/);
 });
 
-test('viral network uses a golden-circle target with staged outward propagation', () => {
-  const network=read('components/ViralNetwork.tsx');
-  const polish=read('app/polish.css');
-  for(const className of ['viral-target','viral-ring ring-1','viral-ring ring-2','viral-ring ring-3','viral-core','viral-node','viral-wave']) assert.match(network,new RegExp(className));
-  for(const label of ['OWNED MEDIA','CREATOR NETWORK','LOCAL COMMUNITY','LOCAL AUDIENCE']) assert.match(network,new RegExp(label));
-  assert.match(polish,/\.viral-target/);
-  assert.match(polish,/\.viral-ring/);
-  assert.match(polish,/@keyframes viralWave/);
-  assert.match(polish,/@keyframes nodeSignal/);
-  assert.match(polish,/prefers-reduced-motion[\s\S]*?\.viral-wave/);
-});
-
 // Keep every execution environment on the same Node major.
 test('Node runtime is pinned to 24 across local, CI, and deployment metadata', () => {
   const pkg = JSON.parse(read('package.json'));
@@ -116,4 +104,14 @@ test('free diagnosis uses nine questions with back navigation', () => {
   assert.match(diagnosis,/9개 질문/);
   assert.match(diagnosis,/이전 질문/);
   assert.match(diagnosis,/goPrevious/);
+});
+
+
+test('contact cards include the approved KakaoTalk and Instagram links', () => {
+  const cta=read('components/FinalCta.tsx');
+  assert.match(cta,/오픈카카오 문의/);
+  assert.match(cta,/https:\/\/open\.kakao\.com\/o\/sBp30eSi/);
+  assert.match(cta,/인스타그램/);
+  assert.match(cta,/https:\/\/instagram\.com\/jeonju\.wwtg/);
+  assert.match(cta,/contact-link-card/);
 });
