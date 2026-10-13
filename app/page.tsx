@@ -3,7 +3,6 @@ import { Hero } from "@/components/Hero";
 import { ProblemSection } from "@/components/ProblemSection";
 import { StoreDiagnosis } from "@/components/StoreDiagnosis";
 import { CustomerLadder } from "@/components/CustomerLadder";
-import { DiscoverySection } from "@/components/DiscoverySection";
 import { ViralNetwork } from "@/components/ViralNetwork";
 import { PivotSection } from "@/components/PivotSection";
 import { DonghaengFlow } from "@/components/DonghaengFlow";
@@ -17,4 +16,4 @@ import { FAQSection } from "@/components/FAQSection";
 import { FinalCta } from "@/components/FinalCta";
 import { Footer } from "@/components/Footer";
 import { MobileStickyCta } from "@/components/MobileStickyCta";
-export default function Home(){return <><Header/><main><Hero/><ProblemSection/><StoreDiagnosis/><CustomerLadder/><DiscoverySection/><ViralNetwork/><PivotSection/><DonghaengFlow/><InstagramToNaver/><StoreCalculator/><ServicesSection/><WhyDonghaeng/><LocalPhilosophy/><FAQSection/><PricingSection/><FinalCta/></main><Footer/><MobileStickyCta/></>}
+export default function Home(){return <><Header/><main><Hero/><ProblemSection/><StoreDiagnosis/><CustomerLadder/><ViralNetwork/><PivotSection/><DonghaengFlow/><InstagramToNaver/><StoreCalculator/><ServicesSection/><WhyDonghaeng/><LocalPhilosophy/><FAQSection/><PricingSection/><FinalCta/></main><Footer/><MobileStickyCta/></>}
