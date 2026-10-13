@@ -1282,3 +1282,15 @@
 .price-included li.price-benefit span{
   font-weight:950;
 }
+
+
+.phone-link{
+  display:block;
+  color:inherit;
+  text-decoration:none;
+  border-radius:46px;
+}
+.phone-link:focus-visible{
+  outline:3px solid var(--orange);
+  outline-offset:8px;
+}
