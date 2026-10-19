@@ -51,6 +51,7 @@ export const services = [
   { num: "06", title: "당근비즈니스", subtitle: "동네 고객과 만나게", items: ["지역 타깃 홍보", "새소식 운영", "필요 시 지원"] },
   { num: "07", title: "카카오맵", subtitle: "길찾기 접점을 놓치지 않게", items: ["매장 정보 세팅", "위치·영업 정보", "요청 시 지원"] },
   { num: "08", title: "구글 비즈니스", subtitle: "외부 검색 접점까지", items: ["기본 프로필 세팅", "매장 정보 정리", "요청 시 지원"] },
+  { num: "09", title: "체험단 선정 및 포스팅 관리 대행", subtitle: "부담 없이 시작하게", items: ["체험단 선정", "방문 일정 안내", "포스팅 일정 관리", "업로드 확인"] },
 ] as const;
 
 export const why = [
@@ -84,6 +85,15 @@ export const pricing = {
     "대행업무 진행 중인 매장: 전주어디갈래 인스타 사진·릴스 패키지 항시 30% 할인",
     "전주 지역 활동 타 먹플루언서 협업 문의 무료 진행 (먹플루언서 협찬비 별도)",
   ],
+} as const;
+
+export const entryService = {
+  eyebrow: "부담 없이 시작하는 단독 대행",
+  title: "체험단 선정 및 포스팅 관리 대행",
+  description: "통합 대행이 부담스러운 매장을 위해 체험단 선정부터 포스팅 관리까지 필요한 부분만 맡아드립니다.",
+  price: "11만원",
+  priceNote: "대행비용 10만원 + 부가세 1만원",
+  included: ["체험단 모집 및 선정", "방문 일정·안내 관리", "포스팅 등록 일정 확인", "업로드 콘텐츠 및 링크 관리"],
 } as const;
 
 export const footer = {
