@@ -164,6 +164,9 @@ h2 { font-size: clamp(38px, 5vw, 64px); word-break: keep-all; }
 .featured .price small { color: #b5c9bc; }
 .price-note { color: #87938b; font-size: 11px; }
 .featured .price-note { color: #b5c9bc; }
+.price-terms { display: grid; gap: 12px; margin-top: 22px; padding: 16px 0; border-top: 1px solid #416353; border-bottom: 1px solid #416353; }
+.price-terms p { display: grid; gap: 4px; margin: 0; color: #d1dfd6; font-size: 11px; line-height: 1.6; word-break: keep-all; }
+.price-terms strong { color: var(--lime); font-size: 11px; }
 .price-card h3 { margin: 48px 0 14px; font-size: 22px; letter-spacing: -.07em; }
 .price-card > p:not(.price-old):not(.price-note) { min-height: 76px; color: var(--muted); font-size: 13px; line-height: 1.75; }
 .featured ul { border-color: #416353; }
