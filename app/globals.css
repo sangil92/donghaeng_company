@@ -179,7 +179,7 @@ h2 { font-size: clamp(38px, 5vw, 64px); }
 .footer-brand small, .footer-info { color: #8fa99b; }
 .site-footer p { margin: 8px 0 0; font-size: 11px; }
 .footer-info { font-size: 10px; line-height: 1.6; text-align: center; }
-.footer-row > a { color: var(--lime); font: 500 10px 'DM Mono', monospace; }
+.footer-contact-note { color: var(--lime); font: 500 10px 'DM Mono', monospace; text-align: right; }
 
 @media (max-width: 860px) {
   .container { width: min(100% - 36px, 620px); }
@@ -203,6 +203,7 @@ h2 { font-size: clamp(38px, 5vw, 64px); }
   .hero-trust { margin-top: 45px; }
   .footer-row { align-items: flex-start; flex-direction: column; }
   .footer-info { text-align: left; }
+  .footer-contact-note { text-align: left; }
 }
 @media (max-width: 520px) {
   .container { width: calc(100% - 28px); }

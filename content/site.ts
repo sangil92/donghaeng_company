@@ -2,9 +2,6 @@ export const site = {
   name: "동행컴퍼니",
   englishName: "DONGHAENG COMPANY",
   consultationHref: "https://open.kakao.com/o/sBp30eSi",
-  instagramHref: "https://instagram.com/jeonju.wwtg",
-  instagramFollowersLabel: "100K+",
-  instagramFollowersVerified: false,
 } as const;
 
 export const nav = [
@@ -103,6 +100,5 @@ export const footer = {
   phone: "연락처: 010-7776-0198",
   email: "이메일: donghaeng.marketing@gmail.com",
   consultationHref: "https://open.kakao.com/o/sBp30eSi",
-  instagramHref: "https://instagram.com/jeonju.wwtg",
   privacyHref: "/privacy",
 } as const;

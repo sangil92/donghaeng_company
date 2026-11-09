@@ -148,7 +148,7 @@ export default function Home() {
         <section className="closing-section"><div className="container closing-inner"><p className="kicker">DONGHAENG COMPANY</p><h2>사장님은 매장에 집중하고,<br /><em>온라인 운영은 동행에 맡기세요.</em></h2><p>특정 결과를 약속하는 대신, 매장에 필요한 운영을 꾸준히 챙기겠습니다.</p><a className="button light" href={site.consultationHref} target="_blank" rel="noreferrer">동행컴퍼니와 상담 시작하기 <span>↗</span></a></div></section>
       </main>
 
-      <footer className="site-footer"><div className="container footer-row"><div><a className="brand footer-brand" href="#top"><span>동행</span><small>COMPANY</small></a><p>사장님이 매장에 집중하는 동안, 온라인은 동행이 챙깁니다.</p></div><div className="footer-info"><p>{site.name} · 대표 박상일</p><p>010-7776-0198 · donghaeng.marketing@gmail.com</p></div><a href={site.instagramHref} target="_blank" rel="noreferrer">@jeonju.wwtg ↗</a></div></footer>
+      <footer className="site-footer"><div className="container footer-row"><div><a className="brand footer-brand" href="#top"><span>동행</span><small>COMPANY</small></a><p>사장님이 매장에 집중하는 동안, 온라인은 동행이 챙깁니다.</p></div><div className="footer-info"><p>{site.name} · 대표 박상일</p><p>010-7776-0198 · donghaeng.marketing@gmail.com</p></div><div className="footer-contact-note">상담은 카카오톡 오픈채팅으로 진행합니다.</div></div></footer>
     </div>
   );
 }

@@ -1,15 +1,8 @@
 import Image from "next/image";
-import { site } from "@/content/site";
 
 export function ReelPhone() {
   return (
-    <a
-      className="phone-link"
-      href={site.instagramHref}
-      target="_blank"
-      rel="noreferrer"
-      aria-label="전주어디갈래 인스타그램으로 이동"
-    >
+    <div className="phone-link" aria-label="동행컴퍼니 콘텐츠 운영 예시">
       <div className="phone" aria-hidden="true">
         <Image
           className="phone-account-image"
@@ -21,6 +14,6 @@ export function ReelPhone() {
         />
         <div className="phone-notification-clear" aria-hidden="true" />
       </div>
-    </a>
+    </div>
   );
 }

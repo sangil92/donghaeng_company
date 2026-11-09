@@ -24,17 +24,6 @@ export function FinalCta() {
               <span className="contact-link-arrow" aria-hidden="true">›</span>
             </a>
 
-            <a className="contact-link-card" href="https://instagram.com/jeonju.wwtg" target="_blank" rel="noreferrer">
-              <span className="contact-link-icon instagram-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" focusable="false">
-                  <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
-                  <circle cx="12" cy="12" r="4" />
-                  <circle cx="17.5" cy="6.5" r="1" className="instagram-dot" />
-                </svg>
-              </span>
-              <span className="contact-link-copy"><strong>인스타그램</strong><small>instagram.com/jeonju.wwtg</small></span>
-              <span className="contact-link-arrow" aria-hidden="true">›</span>
-            </a>
           </div>
         </div>
       </section>
