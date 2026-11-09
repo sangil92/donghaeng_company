@@ -118,7 +118,22 @@ export default function Home() {
           <div className="container"><div className="section-intro split-intro"><div><p className="kicker">WHAT WE ACTUALLY DO</p><h2>그래서 실제로<br /><em>해드리는 일</em></h2></div><p className="body-copy">채널을 많이 추가하는 것이 목표가 아닙니다. 사장님이 놓치고 있던 일을 찾아 매장별 운영 업무로 연결합니다.</p></div><div className="work-grid">{operatingAreas.map((area) => <article key={area.number} className={"work-card work-card-" + area.number}><div className="work-card-top"><span>{area.number}</span><b>{area.title}</b></div><h3>{area.summary}</h3><p>{area.body}</p><ul>{area.items.map((item) => <li key={item}><span>✓</span>{item}</li>)}</ul></article>)}</div></div>
         </section>
 
-        <section className="proof-section rhythm-section">
+                <section className="proof-section creator-section">
+          <div className="container">
+            <div className="section-intro split-intro">
+              <div><p className="kicker">JEONBUK CREATOR CONNECTION</p><h2>전북 인플루언서 섭외도<br /><em>동행 매장은 무료로 진행합니다.</em></h2></div>
+              <p className="body-copy">별도 섭외비로 운영되는 경우가 많은 업무지만, 대표님들의 부담을 줄이고 매장 홍보에 도움을 드리기 위해 동행컴퍼니는 인플루언서 섭외 문의와 연결 과정을 무료로 지원합니다.</p>
+            </div>
+            <div className="proof-grid">
+              <article><span>01</span><h3>전북 지역 인플루언서 연결</h3><p>매장의 위치와 업종, 홍보 방향을 확인한 뒤 전북 지역에서 활동하는 인플루언서 후보를 찾아 문의를 진행합니다.</p></article>
+              <article><span>02</span><h3>대표님 대신 조건을 확인</h3><p>방문 가능 일정, 콘텐츠 방향, 제공 조건 등 대표님이 직접 확인하기 번거로운 내용을 대신 조율합니다.</p></article>
+              <article><span>03</span><h3>실제 비용은 사전 안내</h3><p>섭외 문의와 연결 과정은 무료로 진행하며, 인플루언서 협찬비·식사 제공·제작비 등 실제 발생 비용은 사전에 안내하고 협의합니다.</p></article>
+            </div>
+            <div className="proof-bar"><strong>섭외 문의·연결 과정 무료</strong><span>전북 지역 인플루언서 중심</span><span>협찬비 등 실비는 사전 협의</span></div>
+          </div>
+        </section>
+
+<section className="proof-section rhythm-section">
           <div className="container"><div className="section-intro"><p className="kicker">NOT A ONE-TIME CAMPAIGN</p><h2>한 번 세팅하고 끝나는 게 아니라,<br /><em>계속 변화를 줍니다.</em></h2><p className="body-copy">온라인 운영은 최신성이 쌓여야 합니다. 동행은 매일 확인하고, 매주 비교하고, 매월 방향을 다시 조정합니다.</p></div><div className="proof-grid">{rhythm.map(([label, title, body]) => <article key={label}><span>{label}</span><h3>{title}</h3><p>{body}</p></article>)}</div></div>
         </section>
 
