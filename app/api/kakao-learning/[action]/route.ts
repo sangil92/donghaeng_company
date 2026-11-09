@@ -111,12 +111,18 @@ function status(message: string, code = 200) {
   return NextResponse.json({ status: message }, { status: code, headers });
 }
 async function tokens(params: Record<string, string>) {
+  const body = new URLSearchParams(params);
+  if (!params.client_secret) body.delete("client_secret");
   const r = await fetch("https://kauth.kakao.com/oauth/token", {
     method: "POST",
-    body: new URLSearchParams(params),
+    body,
     cache: "no-store",
   });
-  if (!r.ok) throw new Error("카카오 인증 실패");
+  if (!r.ok) {
+    const error = await r.json().catch(() => ({}));
+    const code = /^KOE\d{3}$/.test(error?.error_code) ? error.error_code : "TOKEN";
+    throw new Error(code);
+  }
   return (await r.json()) as { access_token: string; refresh_token?: string };
 }
 export async function POST(req: NextRequest, route: Route) {
@@ -175,12 +181,22 @@ async function callback(req: NextRequest) {
       400,
     );
   const app = { client_id: a.client_id, client_secret: a.client_secret };
-  const t = await tokens({
-    ...app,
+  let t: Awaited<ReturnType<typeof tokens>>;
+  try {
+    t = await tokens({
+      ...app,
     grant_type: "authorization_code",
     code: query.get("code")!,
-    redirect_uri: base + "/callback",
-  });
+      redirect_uri: base + "/callback",
+    });
+  } catch (error) {
+    const code = error instanceof Error && /^KOE\d{3}$/.test(error.message) ? error.message : "TOKEN";
+    console.warn("Kakao learning token exchange failed", code);
+    const hint = code === "KOE010" ? "REST API 키에 설정된 카카오 로그인용 클라이언트 시크릿을 연결 화면에 입력해 주세요." :
+      code === "KOE320" ? "인가 코드가 만료되었거나 사용되었습니다. 연결 화면에서 다시 로그인해 주세요." :
+      "카카오 오류 코드를 확인한 후 연결 화면에서 다시 시작해 주세요.";
+    return page("카카오 토큰 발급 실패 (" + code + ")", hint + ' <a href="setup">연결 화면 열기</a>', 400);
+  }
   const auth = { Authorization: "Bearer " + t.access_token };
   const profile = await fetch("https://kapi.kakao.com/v2/user/me", {
     headers: auth,
@@ -208,7 +224,8 @@ async function callback(req: NextRequest) {
       "연결 화면에서 다시 동의해 주세요.",
       400,
     );
-  const prior = await read<string>(vault);
+  try {
+    const prior = await read<string>(vault);
   if (prior && unseal<Account>(prior.data).owner !== owner)
     return status("different account", 403);
   await write(
@@ -216,6 +233,10 @@ async function callback(req: NextRequest) {
     seal({ ...app, owner, refresh_token: t.refresh_token }),
     prior?.etag,
   );
+  } catch {
+    console.error("Kakao learning account storage failed");
+    return page("연결 정보 저장 실패 (STORE)", "카카오 인증 후 서버에서 계정 정보를 저장하지 못했습니다. 관리자에게 STORE 코드를 알려주세요.", 503);
+  }
   const res = page(
     "카카오톡 연결 완료",
     "<p>매일 실무 10문답이 준비되면 나와의 채팅으로 보내드립니다.</p>",
