@@ -240,10 +240,12 @@ function valid(v: Lesson, day: string) {
     )
   );
 }
-async function deliver(req: NextRequest) {
+async function deliver(req: NextRequest, testEdition = false) {
   const nonce = req.nextUrl.searchParams.get("key") ?? "";
   if (!/^[a-f0-9]{32,64}$/.test(nonce)) return status("forbidden", 403);
-  const r = await fetch(process.env.KAKAO_LEARNING_EDGE!, {
+  const lessonUrl = new URL(process.env.KAKAO_LEARNING_EDGE!);
+  if (testEdition) lessonUrl.pathname = lessonUrl.pathname.replace(/\/daily$/, "/test");
+  const r = await fetch(lessonUrl, {
     cache: "no-store",
   });
   if (!r.ok) return status("lesson unavailable", 503);
@@ -253,12 +255,12 @@ async function deliver(req: NextRequest) {
   if (
     !valid(lesson, day) ||
     !eq(nonce, lesson.nonce) ||
-    now.slice(11, 13) < "10"
+    (!testEdition && now.slice(11, 13) < "10")
   )
     return status("lesson not ready", 409);
   const stored = await read<string>(vault);
   if (!stored) return status("kakao connection required", 409);
-  const path = "learning/delivery/" + day;
+  const path = "learning/delivery/" + day + (testEdition ? "-test-" + nonce : "");
   const previous = await read<Delivery>(path);
   if (previous && previous.data.state !== "retry")
     return status(
@@ -291,7 +293,7 @@ async function deliver(req: NextRequest) {
     const url = base + "/read?id=" + id;
     const template = {
       object_type: "text",
-      text: Array.from(day + " 요식업 마케팅 실무 10문답\n" + lesson.preview)
+      text: Array.from(day + (testEdition ? " 현장 상담 10문답 [테스트]\n" : " 요식업 마케팅 실무 10문답\n") + lesson.preview)
         .slice(0, 195)
         .join(""),
       link: { web_url: url, mobile_web_url: url },
@@ -335,6 +337,8 @@ export async function GET(req: NextRequest, route: Route) {
       }
       case "callback":
         return await callback(req);
+      case "send-test":
+        return await deliver(req, true);
       case "send":
         return await deliver(req);
       case "read": {

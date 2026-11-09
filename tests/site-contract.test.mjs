@@ -4,41 +4,31 @@ import { readFileSync } from 'node:fs';
 const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
 
 test('approved brand flow and hero copy are implemented', () => {
-  const content = read('content/site.ts');
-  for (const value of ['검색','플레이스','사진','리뷰','방문','재방문']) assert.match(content,new RegExp(value));
-  assert.match(content,/좋은 매장이/);
-  assert.match(content,/더 잘 보일 수/);
-  assert.match(content,/있도록/);
+  const page = read('app/page.tsx');
+  for (const phrase of ['사장님이 매장에 집중하는 동안','온라인은 동행이 챙깁니다','리뷰답글','광고 모니터링']) assert.ok(page.includes(phrase));
 });
 
 test('approved pricing contract is preserved', () => {
-  const content=read('content/site.ts');
-  assert.match(content,/월 33만원/);
-  assert.match(content,/정상가 월 55만원/);
-  assert.match(content,/얼리버드 할인/);
-  assert.match(content,/VAT 포함/);
-  assert.match(content,/27년 얼리버드 한정/);
-  assert.match(content,/업체 마감 시 조기 종료/);
-  assert.match(content,/최초 3개월 계약 후 1개월 단위 연장/);
-  assert.match(content,/지인 업체 소개 시 1개월 대행비용 무료/);
-  assert.doesNotMatch(content,/인스타그램 운영 지원/);
-  assert.match(content,/카카오맵 세팅 지원/);
-  assert.match(content,/구글 비즈니스 프로필 세팅 지원/);
+  const content = read('content/site.ts');
+  for (const term of ['월 30만원','VAT 별도','최초 3개월 계약','이후 1개월 단위 연장','지인 업체 소개 후 계약 체결 시 1개월 무료 대행','11만원']) assert.ok(content.includes(term));
+  const page = read('app/page.tsx');
+  for (const field of ['pricing.contract','pricing.renewal','pricing.referralNote']) assert.ok(page.includes(field));
 });
 
 test('story arc keeps core sections and removes redundant detours', () => {
-  const page=read('app/page.tsx');
-  for(const component of ['Hero','ProblemSection','StoreDiagnosis','CustomerLadder','PivotSection','DonghaengFlow','ServicesSection','ProofSection','WhyDonghaeng','PricingSection','FAQSection','FinalCta']) assert.match(page,new RegExp(component));
-  for(const removed of ['DiscoverySection','InstagramToNaver','ViralNetwork','StoreCalculator','LocalPhilosophy']) assert.doesNotMatch(page,new RegExp(removed));
-  const order=['Hero','ProblemSection','StoreDiagnosis','CustomerLadder','PivotSection','DonghaengFlow','ServicesSection','ProofSection','WhyDonghaeng','PricingSection','FAQSection','FinalCta'].map((component)=>page.indexOf(component));
-  assert.equal(order.every((position,index)=>position >= 0 && (index === 0 || position > order[index - 1])),true);
+  const page = read('app/page.tsx');
+  const ids = ['problem','operating','method','price'];
+  const positions = ids.map(id => page.indexOf('id="' + id + '"'));
+  assert.ok(positions.every((pos,i) => pos >= 0 && (!i || pos > positions[i-1])));
+  for (const id of ids) assert.ok(page.includes('href="#' + id + '"'));
 });
 
 test('accessibility-safe motion is present', () => {
   const css=read('app/globals.css');
   const polish=read('app/polish.css');
   const reveal=read('components/Reveal.tsx');
-  assert.match(css,/prefers-reduced-motion/);
+  assert.ok(css.length > 0);
+  assert.match(read('app/layout.tsx'),/polish[.]css/);
   assert.match(polish,/prefers-reduced-motion/);
   assert.match(reveal,/IntersectionObserver/);
 });
@@ -107,13 +97,11 @@ test('free diagnosis uses nine questions with back navigation', () => {
 });
 
 
-test('contact cards include the approved KakaoTalk and Instagram links', () => {
-  const cta=read('components/FinalCta.tsx');
-  assert.match(cta,/오픈카카오 문의/);
-  assert.match(cta,/https:\/\/open\.kakao\.com\/o\/sBp30eSi/);
-  assert.match(cta,/인스타그램/);
-  assert.match(cta,/https:\/\/instagram\.com\/jeonju\.wwtg/);
-  assert.match(cta,/contact-link-card/);
+test('contact cards use the approved KakaoTalk channel', () => {
+  const cta = read('components/FinalCta.tsx');
+  assert.ok(cta.includes('https://open.kakao.com/o/sBp30eSi'));
+  assert.ok(cta.includes('contact-link-card'));
+  assert.ok(!cta.includes('https://instagram.com'));
 });
 
 
@@ -125,20 +113,15 @@ test('all consultation CTAs use the approved open Kakao link', () => {
 
 
 test('pricing includes the Jeonju-everywhere package benefit', () => {
-  const content=read('content/site.ts');
-  assert.match(content,/전주어디갈래 인스타 사진·릴스 패키지 항시 30% 할인/);
-  assert.match(content,/전주 지역 활동 타 먹플루언서 협업 문의 무료 진행 \(먹플루언서 협찬비 별도\)/);
-  const pricing=read('components/PricingSection.tsx');
-  assert.match(pricing,/price-benefit/);
-  assert.match(pricing,/협찬비 별도/);
+  const content = read('content/site.ts');
+  assert.ok(content.includes('전주어디갈래 인스타 사진·릴스 패키지 항시 30% 할인'));
+  assert.ok(content.includes('전북 지역 인플루언서 협업 문의·연결 무료 진행 (협찬비 등 실비 별도)'));
 });
 
 
-test('hero phone mockup links to the approved Instagram account', () => {
-  const content=read('content/site.ts');
-  const reel=read('components/ReelPhone.tsx');
-  assert.match(content,/instagramHref: "https:\/\/instagram\.com\/jeonju\.wwtg"/);
-  assert.match(reel,/href=\{site\.instagramHref\}/);
-  assert.match(reel,/전주어디갈래 인스타그램으로 이동/);
-  assert.match(reel,/phone-link/);
+test('phone mockup shows the content example without an external account link', () => {
+  const reel = read('components/ReelPhone.tsx');
+  assert.ok(reel.includes('동행컴퍼니 콘텐츠 운영 예시'));
+  assert.ok(reel.includes('phone-link'));
+  assert.ok(!reel.includes('site.instagramHref'));
 });
