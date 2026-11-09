@@ -103,7 +103,7 @@ function page(title: string, body: string, status = 200) {
       ...headers,
       "Content-Type": "text/html; charset=utf-8",
       "Content-Security-Policy":
-        "default-src 'none'; style-src 'unsafe-inline'; form-action 'self' https://kauth.kakao.com; frame-ancestors 'none'",
+        "default-src 'none'; style-src 'unsafe-inline'; form-action 'self' https://kauth.kakao.com https://accounts.kakao.com; frame-ancestors 'none'",
     },
   });
 }
@@ -324,11 +324,15 @@ async function deliver(req: NextRequest) {
 export async function GET(req: NextRequest, route: Route) {
   try {
     switch ((await route.params).action) {
-      case "setup":
-        return page(
+      case "setup": {
+        const form = page(
           "카카오톡 학습 문답 연결",
           '<form method="post"><label>개인 연결 코드<input name="pin" type="password" required></label><label>카카오 앱 REST API 키<input name="key" required></label><label>클라이언트 시크릿 (앱에서 사용 중이면 입력)<input name="secret" type="password"></label><button>카카오로 로그인</button></form>',
         );
+        // Send Origin on same-site form submissions while keeping external navigation private.
+        form.headers.set("Referrer-Policy", "same-origin");
+        return form;
+      }
       case "callback":
         return await callback(req);
       case "send":
