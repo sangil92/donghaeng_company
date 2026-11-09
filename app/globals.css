@@ -223,3 +223,16 @@ h2 { font-size: clamp(38px, 5vw, 64px); }
   .price-card { padding: 24px; }
   .desktop-only { display: none; }
 }
+
+
+.process-grid.process-five { grid-template-columns: repeat(5, 1fr); }
+.rhythm-section { background: #fff; }
+.partner-section { background: #e6ece5; }
+.partner-section .proof-bar strong { color: var(--orange); }
+.partner-section .proof-bar { border-color: #cbd8cc; }
+@media (max-width: 860px) {
+  .process-grid.process-five { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .process-grid.process-five { grid-template-columns: 1fr; }
+}
