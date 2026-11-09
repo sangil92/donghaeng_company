@@ -1,4 +1,4 @@
-import { site, pricing, entryService } from "@/content/site";
+import { site, entryService } from "@/content/site";
 import { ClarityCheck } from "@/components/ClarityCheck";
 
 const operatingAreas = [
@@ -44,12 +44,6 @@ const rhythm = [
   ["매일", "확인하고 바로 반영", "리뷰·광고 잔액·노출 상태·고객 반응·새소식 운영"],
   ["매주", "비교하고 방향 제안", "성과 변화와 유사 매장 레퍼런스를 함께 보고 다음 액션 제안"],
   ["매월", "정리하고 다시 설계", "한 달 운영 결과를 바탕으로 예산·콘텐츠·키워드 우선순위 조정"],
-] as const;
-
-const proof = [
-  ["대행의 기준", "광고를 켜두는 것이 아니라 매일 확인하고 바꾸는 것"],
-  ["동행의 시선", "한 매장만 보지 않고 같은 업종의 흐름과 함께 보는 것"],
-  ["대표님이 받는 것", "막연한 홍보가 아니라 실제 진행 업무와 다음 방향"],
 ] as const;
 
 export default function Home() {
