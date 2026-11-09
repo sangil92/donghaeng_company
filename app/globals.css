@@ -72,8 +72,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .problem-section { padding: 132px 0; color: white; background: var(--green-dark); }
 .section-intro { max-width: 640px; }
 .split-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; max-width: none; align-items: end; }
+.problem-section .split-intro { grid-template-columns: 1.22fr .78fr; }
 .problem-section .kicker, .closing-section .kicker { color: #9ab2a4; }
-h2 { font-size: clamp(38px, 5vw, 64px); }
+h2 { font-size: clamp(38px, 5vw, 64px); word-break: keep-all; }
+.problem-section h2 { max-width: 680px; font-size: clamp(38px, 4vw, 54px); }
 .problem-section h2 em { color: var(--lime); }
 .intro-copy, .body-copy { margin: 0; color: #728079; font-size: 16px; line-height: 1.85; letter-spacing: -.04em; }
 .problem-section .intro-copy { color: #a5b5ac; }
@@ -189,6 +191,7 @@ h2 { font-size: clamp(38px, 5vw, 64px); }
   .hero-grid, .check-grid, .price-grid { grid-template-columns: 1fr; gap: 52px; }
   .hero-visual { box-shadow: 12px 12px 0 rgba(212,233,107,.55); }
   .split-intro { grid-template-columns: 1fr; gap: 24px; align-items: start; }
+  .problem-section .split-intro { grid-template-columns: 1fr; }
   .problem-grid, .proof-grid { grid-template-columns: 1fr; margin-top: 50px; }
   .problem-grid article { min-height: auto; }
   .problem-grid h3 { margin-top: 32px; }

@@ -89,7 +89,7 @@ export default function Home() {
 
         <section className="problem-section" id="problem">
           <div className="container">
-            <div className="section-intro split-intro"><div><p className="kicker">THE REAL PROBLEM</p><h2>마케팅을 안 해서가 아니라,<br /><em>계속 관리하기 어려워서</em> 놓칩니다.</h2></div><div className="intro-copy"><p>사장님은 매장 운영, 직원 관리, 재료 준비, 고객 응대만으로도 하루가 빠르게 지나갑니다.</p><p><strong>온라인에서 매일 일어나는 작은 변화까지 직접 확인하기는 어렵습니다.</strong><br />동행컴퍼니는 바로 그 ‘가려운 부분’을 대신 챙깁니다.</p></div></div>
+            <div className="section-intro split-intro"><div><p className="kicker">THE REAL PROBLEM</p><h2>마케팅을 안 해서가 아니라,<br /><em>계속 관리하기 어려워서</em><br />놓칩니다.</h2></div><div className="intro-copy"><p>사장님은 매장 운영, 직원 관리, 재료 준비, 고객 응대만으로도 하루가 빠르게 지나갑니다.</p><p><strong>온라인에서 매일 일어나는 작은 변화까지 직접 확인하기는 어렵습니다.</strong><br />동행컴퍼니는 바로 그 ‘가려운 부분’을 대신 챙깁니다.</p></div></div>
             <div className="problem-grid">
               <article><span>01 · 놓치기 쉬운 일</span><h3>리뷰답글과<br />고객 반응 확인</h3><p>답글을 달고 싶어도 바쁘고, 어떤 리뷰가 쌓이는지 매일 모니터링하기 어렵습니다.</p></article>
               <article><span>02 · 돈이 새는 일</span><h3>광고비와<br />노출 흐름 확인</h3><p>광고를 켜둔 뒤 클릭·CPC·소진 속도를 확인하지 못하면 조정 시기를 놓칩니다.</p></article>
