@@ -121,7 +121,7 @@ export default function Home() {
                 <section className="proof-section creator-section">
           <div className="container">
             <div className="section-intro split-intro">
-              <div><p className="kicker">JEONBUK CREATOR CONNECTION</p><h2>전북 인플루언서 섭외도<br /><em>동행 매장은 무료로 진행합니다.</em></h2></div>
+              <div><p className="kicker">JEONBUK CREATOR CONNECTION</p><h2>전북 인플루언서 섭외도<br /><em>동행컴퍼니는 무료로 진행합니다.</em></h2></div>
               <p className="body-copy">별도 섭외비로 운영되는 경우가 많은 업무지만, 대표님들의 부담을 줄이고 매장 홍보에 도움을 드리기 위해 동행컴퍼니는 인플루언서 섭외 문의와 연결 과정을 무료로 지원합니다.</p>
             </div>
             <div className="proof-grid">
