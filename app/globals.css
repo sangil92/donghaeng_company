@@ -244,3 +244,7 @@ h2 { font-size: clamp(38px, 5vw, 64px); }
 .owner-impact-section { background: #e6ece5; }
 .owner-impact-section .proof-bar { border-color: #cbd8cc; }
 .owner-impact-section .proof-bar strong { color: var(--green); }
+
+
+.creator-section { background: #fff; }
+.creator-section .proof-bar strong { color: var(--orange); }
