@@ -76,7 +76,7 @@ export function ProofSection() {
 
   return (
     <section className="proof-section review-section" aria-labelledby="review-heading">
-      <div className="shell">
+      <div className="container">
         <Reveal className="review-intro">
           <div>
             <p className="eyebrow">REAL OWNER REVIEWS</p>
