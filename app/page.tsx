@@ -1,5 +1,4 @@
 import { site, entryService } from "@/content/site";
-import { ClarityCheck } from "@/components/ClarityCheck";
 import { ProofSection } from "@/components/ProofSection";
 
 const operatingAreas = [
@@ -100,7 +99,20 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="check-section"><div className="container check-grid"><div><p className="kicker">30-SECOND STORE CHECK</p><h2>우리 매장은<br /><em>어디에서 놓치고 있을까요?</em></h2><p className="body-copy">리뷰·광고·새소식·비교 운영 상태를 빠르게 점검해보세요. 동행은 광고보다 먼저, 지금 매장에 필요한 관리부터 찾습니다.</p><div className="check-points"><span>리뷰</span><span>광고</span><span>새소식</span><span>비교</span></div></div><ClarityCheck /></div></section>
+        <section className="proof-section owner-impact-section">
+          <div className="container">
+            <div className="section-intro split-intro">
+              <div><p className="kicker">WHAT REPRESENTATIVES FEEL FIRST</p><h2>대표님이 먼저 체감하는 건<br /><em>매출 약속이 아니라 운영의 변화입니다.</em></h2></div>
+              <p className="body-copy">매장에 출근해 직접 확인하지 않아도, 온라인에서 미뤄지던 업무가 정리되고 무엇을 바꿔야 할지 명확해집니다.</p>
+            </div>
+            <div className="proof-grid">
+              <article><span>01</span><h3>리뷰와 소식이 밀리지 않음</h3><p>리뷰답글, 네이버 새소식, 당근 새소식처럼 바빠서 뒤로 밀리던 업무를 매장 상황에 맞춰 꾸준히 관리합니다.</p></article>
+              <article><span>02</span><h3>광고 상태를 놓치지 않음</h3><p>광고가 정상 운영 중인지, 잔액과 소진 속도에 이상은 없는지 확인하고 필요한 조정 포인트를 공유합니다.</p></article>
+              <article><span>03</span><h3>다음에 할 일이 보임</h3><p>비슷한 업종의 사례와 우리 매장 데이터를 함께 보며 다음 주에 바꿔볼 키워드·문구·콘텐츠를 제안합니다.</p></article>
+            </div>
+            <div className="proof-bar"><strong>대표님은 매장에 집중</strong><span>동행은 온라인 운영을 챙김</span><span>매장별로 다음 액션을 제안</span></div>
+          </div>
+        </section>
 
         <section className="work-section" id="operating">
           <div className="container"><div className="section-intro split-intro"><div><p className="kicker">WHAT WE ACTUALLY DO</p><h2>그래서 실제로<br /><em>해드리는 일</em></h2></div><p className="body-copy">채널을 많이 추가하는 것이 목표가 아닙니다. 사장님이 놓치고 있던 일을 찾아 매장별 운영 업무로 연결합니다.</p></div><div className="work-grid">{operatingAreas.map((area) => <article key={area.number} className={"work-card work-card-" + area.number}><div className="work-card-top"><span>{area.number}</span><b>{area.title}</b></div><h3>{area.summary}</h3><p>{area.body}</p><ul>{area.items.map((item) => <li key={item}><span>✓</span>{item}</li>)}</ul></article>)}</div></div>
