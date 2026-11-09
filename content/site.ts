@@ -71,7 +71,7 @@ export const pricing = {
   vat: "VAT 별도",
   contract: "매장별 운영 범위 상담",
   renewal: "부가세 포함 33만원",
-  contractNote: "순위·매출 보장이 아닌 지속 운영·개선 지원",
+  contractNote: "특정 결과가 아닌 지속 운영·개선 지원",
   referralNote: "하루 1만원 수준의 파트타임 온라인 운영 파트너",
   included: [
     "네이버 플레이스 리뷰답글·모니터링·새소식 운영",
