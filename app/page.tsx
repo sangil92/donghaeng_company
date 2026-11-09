@@ -1,5 +1,6 @@
 import { site, entryService } from "@/content/site";
 import { ClarityCheck } from "@/components/ClarityCheck";
+import { ProofSection } from "@/components/ProofSection";
 
 const operatingAreas = [
   {
@@ -110,6 +111,8 @@ export default function Home() {
         </section>
 
         <section className="method-section" id="method"><div className="container"><div className="section-intro"><p className="kicker">HOW WE WORK</p><h2>감으로 운영하지 않고,<br /><em>관찰·비교·실행·테스트합니다.</em></h2><p className="body-copy">다른 매장의 사례를 그대로 복사하지 않습니다. 매장 상황에 맞는 요소를 고르고 실제 반응을 확인하며 다음 방향을 제안합니다.</p></div><div className="process-grid process-five">{process.map(([number, title, body]) => <article key={number} className="process-card"><span>{number}</span><h3>{title}</h3><p>{body}</p></article>)}</div></div></section>
+
+        <ProofSection />
 
         <section className="proof-section partner-section"><div className="container"><div className="section-intro split-intro"><div><p className="kicker">A PART-TIME PARTNER FOR YOUR STORE</p><h2>하루 1만원으로,<br /><em>온라인 운영 파트너를 두세요.</em></h2></div><p className="body-copy">동행컴퍼니는 특정 결과를 약속하는 대행사가 아닙니다. 사장님이 미처 신경 쓰지 못한 온라인 업무를 꾸준히 보완하는 파트타임 운영 파트너입니다.</p></div><div className="proof-grid"><article><span>01</span><h3>사장님 대신 확인</h3><p>리뷰답글, 광고 잔액, 새소식, 고객 반응처럼 매일 확인해야 하지만 뒤로 밀리는 일을 챙깁니다.</p></article><article><span>02</span><h3>매장별로 제안</h3><p>다른 고깃집과 유사 업종의 레퍼런스를 참고하되, 우리 매장에 맞는 방향만 골라 제안합니다.</p></article><article><span>03</span><h3>지속적으로 변화</h3><p>한 번의 세팅으로 끝내지 않고 문구·키워드·소재·콘텐츠 방향을 계속 테스트합니다.</p></article></div><div className="proof-bar"><strong>특정 결과를 약속하지 않음</strong><span>대신 매일의 운영을 챙김</span><span>지속적인 개선 방향을 제안합니다</span></div></div></section>
 
