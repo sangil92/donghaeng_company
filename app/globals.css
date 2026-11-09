@@ -239,3 +239,8 @@ h2 { font-size: clamp(38px, 5vw, 64px); }
 @media (max-width: 520px) {
   .process-grid.process-five { grid-template-columns: 1fr; }
 }
+
+
+.owner-impact-section { background: #e6ece5; }
+.owner-impact-section .proof-bar { border-color: #cbd8cc; }
+.owner-impact-section .proof-bar strong { color: var(--green); }
