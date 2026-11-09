@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap');
 
 :root {
+  --navy: #18211d;
+  --deep: #10352d;
+  --border: #dce3dd;
   --ink: #18211d;
   --muted: #69736d;
   --line: #dce3dd;
