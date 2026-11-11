@@ -1,5 +1,6 @@
 import { site, entryService, pricing } from "@/content/site";
 import { ProofSection } from "@/components/ProofSection";
+import { PhoneMockup } from "@/components/PhoneMockup";
 
 const operatingAreas = [
   {
@@ -73,17 +74,7 @@ export default function Home() {
               <div className="hero-actions"><a className="button primary" href="#problem">내 매장 운영 빈틈 확인하기 <span>↓</span></a><a className="text-link" href="#operating">실제로 해드리는 일 <span>→</span></a></div>
               <div className="hero-trust"><span>매일 확인</span><i>·</i><span>업종별 비교</span><i>·</i><span>지속 테스트</span><i>·</i><span>주간 공유</span></div>
             </div>
-            <div className="hero-visual" aria-label="동행컴퍼니 온라인 운영실">
-              <div className="visual-header"><span>ONLINE OPERATING ROOM</span><span className="status-dot">● LIVE MANAGEMENT</span></div>
-              <div className="flow-stack">
-                <div className="flow-item"><span>DAILY</span><b>리뷰·광고 확인</b><small>놓치기 쉬운 신호</small><strong>✓</strong></div>
-                <div className="flow-line" />
-                <div className="flow-item"><span>WEEKLY</span><b>유사 매장 비교</b><small>다음 액션 찾기</small><strong>↗</strong></div>
-                <div className="flow-line" />
-                <div className="flow-item accent"><span>MONTHLY</span><b>운영 방향 조정</b><small>계속 변화를 주기</small><strong>→</strong></div>
-              </div>
-              <div className="visual-caption"><span>동행컴퍼니의 역할</span><b>사장님이 놓치기 쉬운 온라인 운영을<br />매장별로 대신 챙깁니다.</b></div>
-            </div>
+            <PhoneMockup />
           </div>
         </section>
 
