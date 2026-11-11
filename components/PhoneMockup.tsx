@@ -20,7 +20,7 @@ export function PhoneMockup() {
         <span>전북 크리에이터 연결</span>
       </div>
 
-      <div className="phone-shell">
+      <a className="phone-shell" href="https://instagram.com/jeonju.wwtg" target="_blank" rel="noreferrer" aria-label="전주어디갈래 인스타그램으로 이동">
         <div className="phone-speaker" />
         <div className="phone-screen phone-screen-instagram">
           <Image
@@ -32,7 +32,7 @@ export function PhoneMockup() {
             sizes="(max-width: 640px) 220px, 286px"
           />
         </div>
-      </div>
+      </a>
 
       <div className="phone-float-note"><span>동행컴퍼니의 역할</span><b>사장님이 매장에 집중하는 동안<br />온라인 운영을 계속 챙깁니다.</b></div>
       <div className="phone-discovery-cue"><small>릴스를 본 고객</small><strong>“여기 어디지?”</strong><span>네이버에서 매장 검색 →</span></div>
