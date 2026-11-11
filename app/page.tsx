@@ -5,24 +5,24 @@ import { PhoneMockup } from "@/components/PhoneMockup";
 const operatingAreas = [
   {
     number: "01",
-    title: "네이버 검색광고 모니터링",
-    summary: "광고를 켜두는 것에서 끝내지 않습니다",
-    body: "매일 광고 노출·클릭·CPC·소진 속도와 검색어 흐름을 확인해 광고가 매장 상황에 맞게 운영되고 있는지 점검합니다.",
-    items: ["네이버 검색광고 일일 모니터링", "키워드·제외키워드 점검", "소재·예산 상태 확인"],
+    title: "네이버 플레이스 관리",
+    summary: "고객이 보는 기본 정보를 최신 상태로",
+    body: "찾아오시는 길, 메뉴, 사진, 대표키워드 등 네이버 플레이스에서 고객이 확인하는 정보를 매장 상황에 맞게 정리하고 업데이트합니다. 네이버 새소식은 주 1회 업로드하며, 특이사항이 있으면 일정을 조정합니다.",
+    items: ["찾아오시는 길·메뉴·사진 업데이트", "대표키워드 세팅 및 점검", "네이버 새소식 주 1회 업로드"],
   },
   {
     number: "02",
-    title: "리뷰답글 관리",
-    summary: "쌓이는 리뷰에 답하고 고객 반응을 놓치지 않게",
-    body: "새로 등록되는 리뷰를 확인하고 매장의 말투와 상황에 맞춰 답글을 작성합니다. 반복되는 칭찬과 불편 사항도 함께 공유합니다.",
-    items: ["리뷰답글 작성·관리", "리뷰 내용 모니터링", "칭찬·불편 사항 확인"],
+    title: "네이버 검색광고 모니터링",
+    summary: "광고비가 어디에 쓰이는지 매일 확인",
+    body: "네이버 검색광고를 매일 모니터링하고 CPC·CPM 등 주요 지표를 확인해 광고 효율과 소진 흐름을 점검합니다.",
+    items: ["검색광고 일일 모니터링", "CPC·CPM 광고 효율 체크", "키워드·제외키워드·소재 상태 확인"],
   },
   {
     number: "03",
-    title: "네이버 플레이스 SEO 세팅",
-    summary: "검색될 수 있는 기본 구조부터 정리합니다",
-    body: "네이버 플레이스의 대표 키워드와 조합 키워드, 업체 설명, 메뉴와 사진 등 고객이 확인하는 기본 정보를 검색 관점에서 세팅하고 점검합니다.",
-    items: ["플레이스 SEO 기본 세팅", "대표·조합 키워드 점검", "메뉴·사진·정보 노출 상태 확인"],
+    title: "리뷰답글·리뷰이벤트 관리",
+    summary: "리뷰를 관리하고 참여를 끌어냅니다",
+    body: "새 리뷰에 답글을 작성하고 반복되는 고객 반응을 확인합니다. 리뷰이벤트 문구와 안내 흐름도 점검해 참여를 높일 수 있도록 강화합니다.",
+    items: ["리뷰답글 작성·관리", "리뷰 내용 모니터링", "리뷰이벤트 안내·구성 강화"],
   },
   {
     number: "04",
@@ -30,6 +30,20 @@ const operatingAreas = [
     summary: "추가 광고비 없이 지역에 매일 알립니다",
     body: "사장님이 공유해주신 사진과 네이버 플레이스에 등록된 사진을 활용해 당근 게시물과 Threads 콘텐츠를 매일 작성합니다. 광고비를 추가로 집행하지 않고 지역 주민에게 매장 소식을 알리는 운영입니다.",
     items: ["당근 게시물 매일 작성", "Threads 게시물 매일 작성", "지역 주민 대상 무료 홍보 콘텐츠 운영"],
+  },
+  {
+    number: "05",
+    title: "AI 디자인 제작 지원",
+    summary: "매장에 필요한 홍보물을 월 2회 제작",
+    body: "사장님이 공유해주신 사진과 매장 정보를 바탕으로 AI를 활용해 이벤트·공지·메뉴 홍보 등 온라인 콘텐츠 디자인 제작을 지원합니다.",
+    items: ["AI 디자인 제작 지원 월 2회", "이벤트·공지·메뉴 콘텐츠", "매장 사진·정보 기반 제작"],
+  },
+  {
+    number: "06",
+    title: "블로그 체험단 섭외",
+    summary: "원하는 인원만큼 체험단을 모집합니다",
+    body: "매장 업종과 지역에 맞춰 블로그 체험단 섭외를 진행합니다. 모집·섭외 인원에 제한을 두지 않고 매장 상황에 맞게 진행합니다.",
+    items: ["블로그 체험단 섭외", "모집 인원 제한 없음", "방문 일정·업로드 진행 확인"],
   },
 ] as const;
 
@@ -58,7 +72,7 @@ export default function Home() {
               <h1>사장님이 매장에 집중하는 동안,<br /><em>온라인은 동행이 챙깁니다.</em></h1>
               <p className="hero-lead">네이버 검색광고 모니터링, 리뷰답글, SEO 세팅, 당근·Threads 게시물까지.<br className="desktop-only" /> 매장에서 시간을 내기 어려운 온라인 운영을 매일 대신 관리합니다.</p>
               <div className="hero-actions"><a className="button primary" href="#problem">내 매장 운영 빈틈 확인하기 <span>↓</span></a><a className="text-link" href="#operating">실제로 해드리는 일 <span>→</span></a></div>
-              <div className="hero-trust"><span>매일 광고 확인</span><i>·</i><span>리뷰답글 관리</span><i>·</i><span>SEO 세팅</span><i>·</i><span>무료 콘텐츠 운영</span></div>
+              <div className="hero-trust"><span>플레이스 관리</span><i>·</i><span>매일 광고 확인</span><i>·</i><span>콘텐츠 매일 작성</span><i>·</i><span>디자인 월 2회</span></div>
             </div>
             <PhoneMockup />
           </div>
@@ -82,7 +96,7 @@ export default function Home() {
 
         <ProofSection />
 
-        <section className="price-section" id="price"><div className="container price-grid"><div className="section-intro"><p className="kicker">MONTHLY OPERATING SUPPORT</p><h2>하루 1만원으로,<br /><em>온라인 담당자를 두세요.</em></h2><p className="body-copy">월 30만원, 부가세 별도입니다. 사장님이 매장에서 매일 챙기기 어려운 온라인 운영 업무를 정해진 범위 안에서 꾸준히 대신합니다.</p><a className="text-link" href={site.consultationHref} target="_blank" rel="noreferrer">내 매장 상담하기 <span>↗</span></a></div><div className="price-cards"><article className="price-card featured"><div className="price-card-label">DONGHAENG OPERATING PARTNER</div><div className="price"><strong>월 30만원</strong><small>VAT 별도</small></div><p className="price-note">부가세 포함 33만원 · 하루 1만원</p><div className="price-terms"><p><strong>계약 안내</strong><span>{pricing.contract} 후, {pricing.renewal}됩니다.</span></p><p><strong>소개 혜택</strong><span>{pricing.referralNote}을 제공합니다.</span></p></div><ul><li>네이버 검색광고 매일 모니터링</li><li>리뷰답글 작성·리뷰 반응 확인</li><li>네이버 플레이스 SEO 세팅·점검</li><li>당근·Threads 게시물 매일 작성</li><li>사장님 공유 사진·플레이스 사진 활용</li></ul><a className="button primary" href={site.consultationHref} target="_blank" rel="noreferrer">운영 상담하기 <span>↗</span></a></article></div></div></section>
+        <section className="price-section" id="price"><div className="container price-grid"><div className="section-intro"><p className="kicker">MONTHLY OPERATING SUPPORT</p><h2>하루 1만원으로,<br /><em>온라인 담당자를 두세요.</em></h2><p className="body-copy">월 30만원, 부가세 별도입니다. 사장님이 매장에서 매일 챙기기 어려운 온라인 운영 업무를 정해진 범위 안에서 꾸준히 대신합니다.</p><a className="text-link" href={site.consultationHref} target="_blank" rel="noreferrer">내 매장 상담하기 <span>↗</span></a></div><div className="price-cards"><article className="price-card featured"><div className="price-card-label">DONGHAENG OPERATING PARTNER</div><div className="price"><strong>월 30만원</strong><small>VAT 별도</small></div><p className="price-note">부가세 포함 33만원 · 하루 1만원</p><div className="price-terms"><p><strong>계약 안내</strong><span>{pricing.contract} 후, {pricing.renewal}됩니다.</span></p><p><strong>소개 혜택</strong><span>{pricing.referralNote}을 제공합니다.</span></p></div><ul>{pricing.included.map((item) => <li key={item}>{item}</li>)}</ul><a className="button primary" href={site.consultationHref} target="_blank" rel="noreferrer">운영 상담하기 <span>↗</span></a></article></div></div></section>
 
         <section className="closing-section"><div className="container closing-inner"><p className="kicker">DONGHAENG COMPANY</p><h2>사장님은 매장에 집중하고,<br /><em>온라인 운영은 동행에 맡기세요.</em></h2><p>특정 결과를 약속하는 대신, 매장에 필요한 운영을 꾸준히 챙기겠습니다.</p><a className="button light" href={site.consultationHref} target="_blank" rel="noreferrer">동행컴퍼니와 상담 시작하기 <span>↗</span></a></div></section>
       </main>

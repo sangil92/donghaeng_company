@@ -185,6 +185,8 @@ h2 { font-size: clamp(38px, 5vw, 64px); word-break: keep-all; }
 .work-card-02 { background: #dce9df; }
 .work-card-03 { background: #f5e7da; }
 .work-card-04 { background: #dce7ee; }
+.work-card-05 { background: #eee4ef; }
+.work-card-06 { background: #ece8dd; }
 .work-card-top { display: flex; justify-content: space-between; align-items: center; }
 .work-card-top b { color: #647269; font: 500 10px 'DM Mono', monospace; letter-spacing: .08em; }
 .work-card h3 { margin: 48px 0 12px; font-size: 27px; letter-spacing: -.07em; }
